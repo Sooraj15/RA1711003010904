@@ -11,10 +11,18 @@ var password=document.myform.pass1.value;
 var firstpassword=document.myform.pass1.value;  
 var secondpassword=document.myform.pass2.value;   
 var add=document.myform.Address.value;
+var emailid=document.myform.email.value; 
+var atposition=emailid.indexOf("@");  
+var dotposition=emailid.lastIndexOf("."); 
+
 
 if (name==null || name==""){  
   alert("Name can't be blank");  
   return false;  
+}
+if (emailid==null || emailid==""||atposition<1 || dotposition<atposition+2 || dotposition+2>=emailid.length){  
+  alert("Please enter a valid email-id");  
+  return false; 
 }
 
 if (add==null || add==""){  
